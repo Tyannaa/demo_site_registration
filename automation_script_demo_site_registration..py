@@ -21,6 +21,7 @@ def generate_random_email():
 username, random_email = generate_random_email()
 random_password = 'random_password123'
 
+driver.implicitly_wait(2)
 
 email_input = driver.find_element(By.ID, 'reg_email')
 password_input = driver.find_element(By.ID, 'reg_password')
@@ -31,8 +32,6 @@ password_input.send_keys(random_password)
 
 register_button = driver.find_element(By.NAME, 'register')
 register_button.click()
-
-time.sleep(10)
 
 hello_message = driver.find_element(By.XPATH, '//*[contains(text(), "Hello")]')
 
